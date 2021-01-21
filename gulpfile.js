@@ -1,16 +1,11 @@
 var gulp = require('gulp'),
   autoprefixer = require('gulp-autoprefixer'),
-  browsersync = require('browser-sync').create(),
-  reload = browsersync.reload,
   sass = require('gulp-sass'),
-  cleancss = require('gulp-clean-css'),
   sourcemaps = require('gulp-sourcemaps'),
-  changed = require('gulp-changed'),
   uglify = require('gulp-uglify'),
   uglifycss = require('gulp-uglifycss'),
   tiny = require('gulp-tinypng-web'),
   lineec = require('gulp-line-ending-corrector'),
-  fileinclude = require('gulp-file-include'),
   htmlPartial = require('gulp-html-partial');
 
 var root = './src/'
@@ -29,6 +24,13 @@ var imgDest = rootDest + 'assets/images/';
 var mediaDest = rootDest + 'assets/images/';
 var jsDest = rootDest + 'assets/javascript/';
 var fontDest = rootDest + 'assets/fonts/';
+
+/* GULP TASKS 
+gulp.task - Define a new task
+gulp.src - Point to input files to use
+gulp.dest - Points to output folder
+gulp.watch - Watch files and folders for changes
+*/
 
 gulp.task('html', function () {
   gulp.src([htmlPath, htmlPathExclude])
