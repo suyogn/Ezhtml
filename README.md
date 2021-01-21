@@ -38,7 +38,8 @@ Please make sure your assets folder path for CSS, JS & Images. If need then you 
 
 ### Step 8: Now, Just Run project:
 
-All steps are done, run command **gulp** only and your CSS, JS & Images will optimize it.
+All steps are done, run command **gulp** and,
+you can check new **build** folder has been created in your project with optimized files like CSS, JS & Images and all.
 
 ### How to make partial component
 
