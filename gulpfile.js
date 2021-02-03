@@ -1,10 +1,17 @@
+/*** 
+Created By: Suyog Navgale
+"version": "1.1.0",
+"description": "Modern way to optimize static HTML and Assets",
+"license": "ISC"
+****/
+
 var gulp = require('gulp'),
   autoprefixer = require('gulp-autoprefixer'),
   sass = require('gulp-sass'),
   sourcemaps = require('gulp-sourcemaps'),
   uglify = require('gulp-uglify'),
   uglifycss = require('gulp-uglifycss'),
-  tiny = require('gulp-tinypng-web'),
+  image = require('gulp-image'),
   lineec = require('gulp-line-ending-corrector'),
   htmlPartial = require('gulp-html-partial');
 
@@ -25,14 +32,7 @@ var mediaDest = rootDest + 'assets/images/';
 var jsDest = rootDest + 'assets/javascript/';
 var fontDest = rootDest + 'assets/fonts/';
 
-/* GULP TASKS 
-gulp.task - Define a new task
-gulp.src - Point to input files to use
-gulp.dest - Points to output folder
-gulp.watch - Watch files and folders for changes
-*/
-
-gulp.task('html', function () {
+gulp.task('html', async function () {
   gulp.src([htmlPath, htmlPathExclude])
     .pipe(htmlPartial({
       basePath: 'src/'
@@ -73,9 +73,9 @@ gulp.task('css', async function () {
     .pipe(gulp.dest(scssDest, { append: true }));
 });
 
-gulp.task('tinypng', async function () {
+gulp.task('imageOptimize', async function () {
   return gulp.src(imgPath)
-    .pipe(tiny())
+    .pipe(image())
     .pipe(gulp.dest(imgDest, { append: true }))
 });
 
@@ -90,15 +90,15 @@ gulp.task('uglifyJS', async function () {
     .pipe(gulp.dest(jsDest, { append: true }))
 });
 
-gulp.task('run', ['html', 'fonts', 'sass', 'css', 'tinypng', 'mediaFiles', 'uglifyJS']);
 gulp.task('watch', async function () {
-  gulp.watch('src/*.html', ['html']);
-  gulp.watch(fontPath, ['fonts']);
-  gulp.watch(scssPath, ['sass']);
-  gulp.watch(cssPath, ['css']);
-  gulp.watch(imgPath, ['tinypng']);
-  gulp.watch(mediaPath, ['mediaFiles']);
-  gulp.watch(jsPath, ['uglifyJS']);
+  gulp.watch('src/**/*.html', gulp.series('html'));
+  gulp.watch(fontPath, gulp.series('fonts'));
+  gulp.watch(scssPath, gulp.series('sass'));
+  gulp.watch(cssPath, gulp.series('css'));
+  gulp.watch(imgPath, gulp.series('imageOptimize'));
+  gulp.watch(mediaPath, gulp.series('mediaFiles'));
+  gulp.watch(jsPath, gulp.series('uglifyJS'));
 })
 
-gulp.task('default', ['run', 'watch']);
+gulp.task('develop', gulp.series('html', 'fonts', 'sass', 'css', 'mediaFiles', 'uglifyJS', 'watch'));
+gulp.task('default', gulp.series('develop', 'imageOptimize', 'watch'));

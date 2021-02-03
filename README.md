@@ -1,6 +1,6 @@
 <!--
 Created By: Suyog Navgale
-"version": "1.0.0",
+"version": "1.1.0",
 "description": "Modern way to optimize static HTML and Assets",
 "license": "ISC"
 -->
@@ -21,7 +21,7 @@ Create a package file on CLI: npm init
 
 ### Step 4: Install gulp plugins from VS Code terminal
 
-**[gulp](https://www.npmjs.com/package/gulp)** or use directly on CLI: **npm i gulp@3.9.1 -D**
+**[gulp](https://www.npmjs.com/package/gulp)** or use directly on CLI: **npm i gulp -D**
 
 ### Step 5: After completed above steps then create a gulpfile.js:
 
