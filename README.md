@@ -30,7 +30,7 @@ It will ask few details like package name version etc. You can fill or just skip
 
 ### Step 6: Install remeaning plugins which has to support for optimization:
 
-Install plugins from CLI: **npm i gulp-autoprefixer gulp-html-partial gulp-line-ending-corrector gulp-sass gulp-sourcemaps gulp-uglify gulp-tinypng-web gulp-uglifycss --save-dev**
+Install plugins from CLI: **npm i gulp-autoprefixer gulp-html-partial gulp-line-ending-corrector gulp-sass gulp-sourcemaps gulp-uglify gulp-image gulp-uglifycss --save-dev**
 
 ### Step 7: Download the gulpfile.js from Repo and replace into your project:
 
