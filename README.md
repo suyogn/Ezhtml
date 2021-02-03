@@ -44,4 +44,4 @@ you can check new **build** folder has been created in your project with optimiz
 ### How to make partial component
 
 You can add any HTML file into the parent HTML using the
-<partial src="shared/header.html" title="Header Component"></partial >
+\<partial src="shared/header.html" title="Header Component"></partial>\
