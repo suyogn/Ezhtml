@@ -1,0 +1,30 @@
+/****
+Reset the CSS properties 
+
+html {
+  font-size: var(--base-font-size);
+}
+
+body {
+  font-size: 1rem;
+  font-family: var(--default-font);
+}
+
+ul,
+li {
+  @extend .no-padding;
+  @extend .no-margin;
+  list-style: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  @extend .no-margin;
+  @extend .no-padding;
+}
+****/

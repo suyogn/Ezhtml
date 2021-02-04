@@ -7,6 +7,16 @@ Created By: Suyog Navgale
 
 # OPTIMIZEWEB Installation & Configuration: Modern way to optimize the HTML & Assets
 
+### Uses and Benefits:
+
+- It is possible to merge multiple components in a one HTML
+- All Jpg, Png can optimized, no need to upload on tinypng or other server websites.
+- Customized/Third-party Javascript minimized.
+- Customized CSS/Third-party CSS mininized.
+
+**Note:** Once you have done the all below steps, then please change the source file path from gulpfile.js as per your project.
+Currently, It is set as per SRC folder, which has added in this Repositary.
+
 ### Step 1: Install NodeJS
 
 **[NodeJS](https://nodejs.org/en/)**
