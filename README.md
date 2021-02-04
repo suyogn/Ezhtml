@@ -51,7 +51,9 @@ Please make sure your assets folder path for CSS, JS & Images. If need then you 
 
 All steps are done, Now, you can run command **gulp** or **gulp develop** and,
 you can check new **build** folder has been created in your project with optimized files like CSS, JS & Images and all.
-Difference **gulp** and **gulp develop** CLI command:
+
+### Difference between **gulp** and **gulp develop** CLI command:
+
 **gulp develop**: if you are not required to optimize the images on each time.
 **gulp**: optimize the images on each time.
 
