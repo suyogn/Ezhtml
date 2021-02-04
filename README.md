@@ -13,6 +13,7 @@ Created By: Suyog Navgale
 - All Jpg, Png can optimized, no need to upload on tinypng or other server websites.
 - Customized/Third-party Javascript minimized.
 - Customized CSS/Third-party CSS mininized.
+- Any modification in the HTML or SCSS will run the **watch** and update in build folder.
 
 **Note:** Once you have done the all below steps, then please change the source file path from gulpfile.js as per your project.
 Currently, It is set as per SRC folder, which has added in this Repositary.
@@ -48,8 +49,11 @@ Please make sure your assets folder path for CSS, JS & Images. If need then you 
 
 ### Step 8: Now, Just Run project:
 
-All steps are done, run command **gulp** and,
+All steps are done, Now, you can run command **gulp** or **gulp develop** and,
 you can check new **build** folder has been created in your project with optimized files like CSS, JS & Images and all.
+Difference **gulp** and **gulp develop** CLI command:
+**gulp develop**: if you are not required to optimize the images on each time.
+**gulp**: optimize the images on each time.
 
 ### How to make partial component
 
